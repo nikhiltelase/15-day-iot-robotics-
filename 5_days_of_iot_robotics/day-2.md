@@ -73,7 +73,7 @@ The NodeMCU ESP8266 board uses the **CH340 USB-to-Serial chip** to connect with 
 **Command:**
 
 ```bash
-esptool.py --port COMX erase_flash
+esptool --port COMX erase_flash
 ```
 
 * Replace `COMX` with your actual port (e.g., COM4).
