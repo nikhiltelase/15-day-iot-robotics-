@@ -1,5 +1,3 @@
-
-
 # 📘 **Day-3 – Introduction to Sensors & Ultrasonic Sensor with LED Project**
 
 ---
@@ -173,6 +171,57 @@ while True:
 ### 🎯 Result:
 
 * Agar object 20cm se paas hoga ➜ **LED ON**
+* Door hoga ➜ **LED OFF**
+
+---
+
+### ✅ **Step 3: Control LED Based on Distance (Advanced Version)**
+
+### 🧑‍💻 Code (with Blinking):
+
+```python
+from machine import Pin, time_pulse_us
+from time import sleep
+
+trigger = Pin(14, Pin.OUT)   # Trig = D5
+echo = Pin(12, Pin.IN)       # Echo = D6
+led = Pin(4, Pin.OUT)        # LED = D2
+
+def get_distance():
+    trigger.off()
+    sleep(0.01)
+    trigger.on()
+    sleep(0.00001)
+    trigger.off()
+
+    duration = time_pulse_us(echo, 1)
+    distance = (duration * 0.0343) / 2
+    return distance
+
+while True:
+    d = get_distance()
+    print("Distance:", d, "cm")
+
+    if d < 20:
+        while True:
+            led.on()
+            sleep(1)
+            led.off()
+            sleep(1)
+            
+            d = get_distance()  # 🔁 Update the distance inside the loop
+            print("Distance inside loop:", d, "cm")
+            if d > 20:
+                break
+    else:
+        led.off()
+
+    sleep(1)
+```
+
+### 🎯 Result:
+
+* Agar object 20cm se paas hoga ➜ **LED blink karega**
 * Door hoga ➜ **LED OFF**
 
 ---
