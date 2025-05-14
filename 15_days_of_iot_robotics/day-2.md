@@ -1,4 +1,4 @@
-**<div align="center">
+<div align="center">
   `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRx7L3QXZeJ5gtlP5Qi728ZyvGvRBfYz-_mrA&s" alt="Connect Shiksha Logo" width="200"/>`
   
   # Connect Shiksha IoT Academy
