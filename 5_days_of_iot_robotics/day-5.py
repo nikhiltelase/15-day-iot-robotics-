@@ -61,11 +61,11 @@ html = """<!DOCTYPE html>
 <body>
   <h2>WiFi Car Control</h2>
   <div class="controls">
-    <button onclick="sendCmd('forward')">↑</button><br>
-    <button onclick="sendCmd('left')">←</button>
-    <button onclick="sendCmd('stop')">■</button>
-    <button onclick="sendCmd('right')">→</button><br>
-    <button onclick="sendCmd('backward')">↓</button>
+    <button onclick="sendCmd('forward')">forward</button><br>
+    <button onclick="sendCmd('left')">left</button>
+    <button onclick="sendCmd('stop')">stop</button>
+    <button onclick="sendCmd('right')">right</button><br>
+    <button onclick="sendCmd('backward')">backward</button>
   </div>
   <h3>Speed: <span id="spd">600</span></h3>
   <input type="range" min="0" max="1023" value="600" class="slider" id="speedSlider" oninput="updateSpeed(this.value)">
